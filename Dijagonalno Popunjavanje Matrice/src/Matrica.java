@@ -10,18 +10,14 @@ public class Matrica {
         int matrica[][] = new int[n][n];
         int x = 1;
         for (int i = 0; i < 2*n-1; i++) {
-            if (i > n - 1) {
-                int red = n - 1;
-                for (int kol = i - (n - 1); kol <= n - 1; kol++) {
+            if (i > n-1) {
+                for (int red = n-1, kol = i-(n-1); kol <= n-1; red--, kol++) {
                     matrica[red][kol] = x;
-                    red--;
                     x++;
                 }
             } else {
-                int red = i;
-                for (int kol = 0; kol <= i; kol++) {
+                for (int red = i, kol = 0; kol <= i; red--, kol++) {
                     matrica[red][kol] = x;
-                    red--;
                     x++;
                 }
             }
